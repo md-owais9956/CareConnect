@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="text-center mb-3">
+  <h2 class="mb-2 text-primary">Welcome to CareConnect</h2>
+  <p class="lead text-secondary">
+     Manage patients, doctors, and health records with a modern, responsive interface.
+  </p>
+  <hr>
+  <div class="row g-3 justify-content-center">
+    <div class="col-6 col-md-4">
+      <a href="{{ url_for('register_patient') }}" class="btn btn-outline-primary w-100">Register Patient</a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="{{ url_for('register_doctor') }}" class="btn btn-outline-primary w-100">Register Doctor</a>
+    </div>
+    <div class="col-6 col-md-4">
+      <a href="{{ url_for('add_record_form') }}" class="btn btn-outline-primary w-100">Add Health Record</a>
+    </div>
+  </div>
+  <div class="mt-4 alert alert-info small">
+    For security, data is stored in-memory (not permanent). Use for demo/testing only.
+  </div>
+</div>
+{% endblock %}

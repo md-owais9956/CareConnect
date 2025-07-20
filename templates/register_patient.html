@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h4 class="mb-3">Register New Patient</h4>
+<form method="post" class="row g-3">
+  <div class="col-12">
+    <label for="pname" class="form-label">Patient Name</label>
+    <input type="text" class="form-control" id="pname" name="name" required>
+  </div>
+  <div class="col-12 mt-2">
+    <button type="submit" class="btn btn-primary w-100">Register Patient</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h4>All Registered Doctors</h4>
+<table class="table table-striped">
+  <thead><tr><th>#</th><th>ID</th><th>Name</th></tr></thead>
+  <tbody>
+    {% for d in doctors %}
+      <tr><td>{{ loop.index }}</td><td>{{d.id}}</td><td>{{d.name}}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('register_doctor') }}" class="btn btn-success mt-2">+ Add Doctor</a>
+{% endblock %}

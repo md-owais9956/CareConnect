@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h4 class="mb-3">Add Health Record</h4>
+<form method="post" class="row g-3">
+  <div class="col-md-6">
+    <label for="patient_id" class="form-label">Patient</label>
+    <select class="form-select" id="patient_id" name="patient_id" required>
+      <option value="" disabled selected>Select patient</option>
+      {% for p in all_patients %}
+      <option value="{{p.id}}">{{p.name}} ({{p.id}})</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="doctor_id" class="form-label">Doctor</label>
+    <select class="form-select" id="doctor_id" name="doctor_id" required>
+      <option value="" disabled selected>Select doctor</option>
+      {% for d in all_doctors %}
+      <option value="{{d.id}}">{{d.name}} ({{d.id}})</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-12">
+    <label for="description" class="form-label">Disease</label>
+    <input type="text" class="form-control" id="description" name="description" maxlength="100" required>
+  </div>
+  
+
+<!--  -->
+
+<form method="post" class="row g-3">
+  <!-- Existing fields: patient, doctor, description, etc. (see previous examples) -->
+
+  <div class="col-12 col-md-6">
+    <label for="data" class="form-label">Health Record Data</label>
+    <textarea class="form-control" id="data" name="data" rows="3"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="prescription" class="form-label">Prescription</label>
+    <textarea class="form-control" id="prescription" name="prescription" rows="3"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="symptoms" class="form-label">Symptoms</label>
+    <textarea class="form-control" id="symptoms" name="symptoms" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="diagnosis" class="form-label">Diagnosis</label>
+    <textarea class="form-control" id="diagnosis" name="diagnosis" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="lab_results" class="form-label">Lab Results</label>
+    <textarea class="form-control" id="lab_results" name="lab_results" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="notes" class="form-label">Additional Notes</label>
+    <textarea class="form-control" id="notes" name="notes" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="followup" class="form-label">Follow-up Date</label>
+    <input type="date" class="form-control" id="followup" name="followup">
+  </div>
+
+  <!-- NEW SECTION: Allergy -->
+  <div class="col-12 col-md-6">
+    <label for="allergy" class="form-label">Allergy(text area, one or more allergies)</label>
+    <textarea class="form-control" id="allergy" name="allergy" rows="2" placeholder="List any known allergies"></textarea>
+  </div>
+
+  <!-- ADDITIONAL SUGGESTED FIELDS -->
+  <div class="col-12 col-md-6">
+    <label for="medical_history" class="form-label">Past Medical History</label>
+    <textarea class="form-control" id="medical_history" name="medical_history" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="family_history" class="form-label">Family History</label>
+    <textarea class="form-control" id="family_history" name="family_history" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="vaccination" class="form-label">Vaccination Status</label>
+    <input class="form-control" id="vaccination" name="vaccination" type="text">
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="vitals" class="form-label">Vital Signs(Blood Pressure, Pulse, etc.)</label>
+    <input class="form-control" id="vitals" name="vitals" type="text" placeholder="e.g., BP: 120/80, HR: 70">
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="lifestyle" class="form-label">Lifestyle(Smoking/Alcohol/Exercise)</label>
+    <input class="form-control" id="lifestyle" name="lifestyle" type="text" placeholder="e.g., Non-smoker, Regular exercise">
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="medications" class="form-label">Current Medications</label>
+    <textarea class="form-control" id="medications" name="medications" rows="2"></textarea>
+  </div>
+  <div class="col-12 col-md-6">
+    <label for="emergency_contact" class="form-label">Emergency Contact</label>
+    <input class="form-control" id="emergency_contact" name="emergency_contact" type="text">
+  </div>
+  <!-- END OF ADDITIONS -->
+
+  
+
+
+<!--  -->
+
+
+
+  <div class="col-12 mt-2">
+    <button type="submit" class="btn btn-info w-100">Add Record</button>
+  </div>
+</form>
+{% endblock %}

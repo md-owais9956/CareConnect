@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h4>Search Patient Records</h4>
+<form method="post" class="row g-3 mb-3">
+  <div class="col-md-8">
+    <label for="patient_id" class="form-label">Patient ID</label>
+    <input type="text" class="form-control" id="patient_id" name="patient_id" placeholder="Enter patient ID..." required value="{{search_id}}">
+  </div>
+  <div class="col-md-4 d-grid">
+    <label class="form-label invisible">Search</label>
+    <button type="submit" class="btn btn-outline-secondary">Find</button>
+  </div>
+</form>
+{% if records is not none %}
+  {% if records %}
+  <h5 class="mt-4">Health Records for <span class="text-info">{{search_id}}</span></h5>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th>#</th>
+          <th>Doctor</th>
+          <th>Description</th>
+          <th>Symptoms</th>
+          <th>Diagnosis</th>
+          <th>Lab Results</th>
+          <th>Additional Notes</th>
+          <th>Follow-up</th>
+          <th>Prescription</th>
+          <th>Health Record Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in records %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>
+            {%- if doctors and r.doctor_id in doctors -%}
+              {{ doctors[r.doctor_id].name }}
+            {%- else -%}
+              {{ r.doctor_id }}
+            {%- endif -%}
+          </td>
+          <td>{{ r.description or "NA" }}</td>
+          <td>{{ r.symptoms or "NA" }}</td>
+          <td>{{ r.diagnosis or "NA" }}</td>
+          <td>{{ r.lab_results or "NA" }}</td>
+          <td>{{ r.notes or "NA" }}</td>
+          <td>{{ r.followup or "NA" }}</td>
+          <td>{{ r.prescription or "NA" }}</td>
+          <td>{{ r.data or "NA" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="alert alert-warning">No records found for this patient.</div>
+  {% endif %}
+{% endif %}
+{% endblock %}
