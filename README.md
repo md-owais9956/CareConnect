@@ -14,7 +14,6 @@ CareConnect is a compassionate medical chatbot designed to assist patients in co
 
 - **Backend**: Python (Flask)
 - **Frontend**: HTML
-- **Deployment**: Vercel
 
 ## 📂 Repository Structure
 
