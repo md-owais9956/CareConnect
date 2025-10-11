@@ -1,10 +1,6 @@
 # CareConnect
 
-## 🌐 Live Demo  
-[Visit CareConnect (sample)](https://7f13cg29-5000.inc1.devtunnels.ms/)  
-> ⚠️ **Note:** This is just for sample.
 
----
 
 ## 🏥 What is CareConnect?
 
