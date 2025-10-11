@@ -2,6 +2,12 @@
 
 CareConnect is a compassionate medical chatbot designed to assist patients in communicating their medical issues. The chatbot generates a detailed report and recommends a suitable doctor for the patient. The report is forwarded to the designated doctor along with the patient's contact details and available time slots for consultation. Patient medical history is securely stored and managed.
 
+## 🌐 Live Demo  
+[Visit Care-Connect](https://7f13cg29-5000.inc1.devtunnels.ms/)  
+> ⚠️ **Note:** This is just for sample.
+
+---
+
 ## 🧪 Features
 
 - **Sympathetic Medical Chatbot**: Engage in natural conversations to describe symptoms.
